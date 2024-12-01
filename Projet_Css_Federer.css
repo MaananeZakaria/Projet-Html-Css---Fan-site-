@@ -57,6 +57,10 @@ header {
     outline: none;      /* Supprime le contour bleu au clic */
 }
 
+button:hover {
+    background-color: #000000;
+  }
+
 
 .menu {
     display: none;
@@ -85,7 +89,7 @@ header {
     font-size: 1.2rem;
 }
 .menu li a:hover {
-    color: #ffd700; /* Effet hover */
+    color: #7ac3ff; /* Effet hover */
 }
 
 /* ===============================Hero Section========================== */
@@ -441,22 +445,11 @@ footer {
     left: 50%;          /* Centre horizontalement */
 
 }
-/*Bouton java */
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #65a9e0; /* Bleu doux */
-    background-color: #010508;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
   
 button:hover {
-    background-color: #1f8fda;
+    background-color: #000000;
   }
-/*=====*/  
+
 
 /*Bouton lien */
 
@@ -559,6 +552,134 @@ button:hover {
     }
 }
 
+/*============ Ouverture sur instagram ========*/
+
+
+.content-box {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #000000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .content-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .content-title {
+    font-size: 1.8rem;
+    margin: 20px 0;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  .content-image {
+    width: 50%; /* Réduit la largeur à 50% du conteneur */
+    height: auto; /* Maintient les proportions */
+    display: block;
+    margin: 0 auto; /* Centre horizontalement */
+    transition: transform 0.3s;
+  }
+  
+  /* Hover effects */
+  .content-link:hover .content-title {
+    color: #4aa7ff;
+  }
+  
+  .content-link:hover .content-image {
+    transform: scale(1.05);
+  }
+  /*===========================================*/
+
+
+
+
+
+  /*================== Evenements ======================*/
+
+  .agenda {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.event {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-bottom: 1px solid #000000;
+}
+
+.event:last-child {
+    border-bottom: none;
+}
+
+.event-date {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.event-details h2 {
+    font-size: 1.4em;
+    color: #c401ff;
+    margin: 5px 0;
+}
+
+.event-details p {
+    font-size: 1em;
+    color: #76dfff;
+}
+
+/*=============================================================*/
+
+
+/*===================== Evenements pasées =====================*/
+
+.souvenirs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsive */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.souvenir {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+}
+
+.souvenir img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.souvenir h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/*====================================================================*/
 
 
 
@@ -657,9 +778,56 @@ button:hover {
         top: 15px; /* Positionnement légèrement ajusté */
       }
       /*=========================================================================*/
+       
 
-
+      /* =========== Ouverture vers page insta ==========*/
+      .content-title {
+        font-size: 1.2rem;
+        margin: 10px 0;
+      }
     
+      .content-box {
+        max-width: 100%;
+      }
+    
+      .content-image {
+        width: 70%; /* Image plus grande sur petits écrans */
+      }
+      /*===========================================*/
+
+
+    /*===================== Evenements ===========================*/
+
+
+    .agenda {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    .event-date {
+        font-size: 0.9em;
+    }
+
+    .event-details h2 {
+        font-size: 1em;
+    }
+
+    .event-details p {
+        font-size: 0.8em;
+    }
+    /*============================================================*/
+
+    /*=============== Evenements pasées ===========*/
+    .souvenirs {
+        grid-template-columns: 1fr; /* Une colonne sur mobile */
+    }
+
+    .souvenir h3 {
+        font-size: 0.9em; /* Réduction h3 == */
+    }
+
+    /*============================================================*/
+
 }
 
 
@@ -780,6 +948,56 @@ button:hover {
         font-size: 20px; /* Agrandir les liens sur mobile */
         color: white;
     }
+
+    /*================== Ouverture insta ============*/
+    
+    .content-title {
+        font-size: 1.5rem;
+        margin: 15px 0;
+      }
+    
+      .content-box {
+        max-width: 600px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .content-image {
+        width: 60%; /* Image légèrement plus grande sur tablette */
+      }
+
+      /*================================================*/
+      /* ========== Evenements ===================*/
+      .agenda {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .event-date {
+        font-size: 1em;
+    }
+
+    .event-details h2 {
+        font-size: 1.2em;
+    }
+
+    .event-details p {
+        font-size: 0.9em;
+    }
+      /*===========================================*/
+
+      /*================== Evenements pasées =================*/
+      .souvenirs {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Plus petit sur tablette */
+    }
+
+    .souvenir h3 {
+        font-size: 1em; /* Réduire la taille du titre */
+    }
+
+
+
+      /*========================================================*/
 }
 
 
@@ -921,10 +1139,102 @@ button:hover {
     opacity: 0.8; /* Réduit légèrement l'opacité */
 }
 
+/* Formulaire de contact*/
 
 
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .contact-form h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  .contact-form label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+  }
+  
+  .contact-form .required {
+    color: #e74c3c;
+    margin-left: 5px;
+  }
+  
+  .contact-form .optional {
+    color: #3498db;
+    margin-left: 5px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .contact-form .example {
+    font-size: 0.9em;
+    color: #95a5a6;
+    margin: -5px 0 15px;
+    text-align: left;
+  }
+  
+  .contact-form textarea {
+    resize: none;
+  }
+  
+  .contact-form button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-form button:hover {
+    background-color: #c0392b;
+  }
 
 
+  /*Lien vers d'autres sites fans */
 
+
+.footer-links {
+    margin-top: 20px;
+  }
+  
+  .footer-links h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin: 5px 0;
+  }
+  
+  .footer-links a {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #1abc9c;
+  }
 /*=======================================================================*/
 
