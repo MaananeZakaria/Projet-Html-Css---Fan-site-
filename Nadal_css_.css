@@ -1,0 +1,1327 @@
+
+/* Police élégante et configuration globale */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ff9100;
+    background: #000;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    z-index: 1000;
+    background: rgba(255, 115, 0, 0.8);
+}
+
+
+.logo img {
+    position: absolute; /* Permet un positionnement précis */
+    top: 20px;          /* Ajustez selon vos besoins */
+    left: 50%;          /* Centre horizontalement */
+    transform: translateX(-50%); /* Centre parfaitement */
+    max-width: 100px;   /* Taille trois fois plus grande (ajustez si nécessaire) */
+    filter: brightness(0) invert(1); /* Rend le logo blanc */
+    z-index: 1000;      /* Assurez qu'il reste visible */
+}
+
+/* ========================Style du bouton hamburger ==================*/
+
+/* Style du bouton hamburger */
+
+
+.hamburger {
+    position: absolute;
+    top: 20px;
+    left: 20px;         /* Reste aligné à gauche */
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: rgb(255, 153, 0);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+.hamburger:focus {
+    outline: none;      /* Supprime le contour bleu au clic */
+}
+
+button:hover {
+    background-color: #000000;
+  }
+
+
+.menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    background: rgba(255, 145, 0, 0.9);
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0.5rem 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.menu li a:hover {
+    color:#ff8800; /* Effet hover */
+}
+
+/* ===============================Hero Section========================== */
+
+
+/* Section Hero : l'arrière-plan principal en pleine page */
+.hero {
+    height: 100vh; /* La hauteur de la section prend 100% de la hauteur de la fenêtre du navigateur (viewport) */
+    position: relative; /* Permet de positionner des éléments enfants de manière absolue par rapport à cet élément */
+    background: url('Roger_Federer_full_page.jpg ') no-repeat center center/cover; 
+    /* L'arrière-plan est défini par une image.
+       - no-repeat : l'image ne se répète pas
+       - center center : l'image est centrée à la fois horizontalement et verticalement
+       - cover : l'image couvre toute la zone de l'élément, en conservant ses proportions, mais peut être recadrée */
+    display: flex; 
+    justify-content: center; /* Aligne les éléments enfants (h1, p) horizontalement au centre de la section */
+    align-items: center; /* Aligne les éléments enfants (h1, p) verticalement au centre de la section */
+    text-align: center; /* Aligne le texte horizontalement au centre */
+    overflow: hidden; /* Cache tout contenu débordant de la section */
+}
+
+/* Style pour l'overlay, la couche au-dessus de l'arrière-plan */
+.hero .overlay {
+    position: absolute; /* L'élément est positionné par rapport à son parent (la section .hero), qui a une position relative */
+    z-index: 1; /* Place l'élément au-dessus des autres éléments qui ont un z-index inférieur (permet de faire ressortir l'overlay) */
+    padding: 1rem; /* Ajoute un peu d'espace autour de l'overlay */
+}
+
+/* Style pour les titres et paragraphes dans la section hero */
+.hero h1, .hero p {
+    margin: 0; /* Supprime la marge par défaut autour des éléments h1 et p */
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7); 
+    /* Applique une ombre au texte pour améliorer la lisibilité sur un arrière-plan complexe :
+       - 0px 0px : aucune décalage sur les axes X et Y
+       - 5px : flou de l'ombre
+       - rgba(0, 0, 0, 0.7) : couleur noire avec une opacité de 70% */
+}
+
+
+
+
+
+/*============ Conteneur de la section vidéo ====================*/
+.section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.video-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Vidéo occupe tout l'écran sans déformation */
+  
+    
+    object-fit: cover;
+    filter: brightness(30%); /* Réduit la luminosité */
+    opacity: 0.8; /*je peut utiliser ca aussi */
+
+}
+
+/* Texte sur la vidéo */
+.video-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 2em;
+    text-align: center;
+    z-index: 2;
+    
+}    
+.video-text p {
+    color: #ffffff; 
+}
+
+.video-text h2 img  {       
+
+        position: absolute; /* Permet un positionnement précis */
+        top: 10px;          /* Ajustez selon vos besoins */
+        left: 50%;          /* Centre horizontalement */
+        transform: translateX(-50%); /* Centre parfaitement */
+        max-width: 82px;   /* Taille trois fois plus grande (ajustez si nécessaire) */
+        filter: brightness(0) invert(1); /* Rend le logo blanc */
+        z-index: 1000; 
+
+}
+
+
+/*  Page avec les phrases qui apparaissent  */
+
+.content-section {
+    height: 100vh; /* Chaque section de contenu remplit une page entière */
+    background-color: #000; /* Fond noir */
+    display: flex;
+    flex-direction: column; /* Empile les éléments verticalement */
+    align-items: center; /* Centre horizontalement */
+    justify-content: center; /* Centre verticalement */
+    font-size: 2em;
+    text-align: center;
+}
+
+/* Titre principal */
+.content-section h2 {
+    color :#ffffff;
+    font-size: 44px;
+    margin-bottom: 20px; /* Ajoute un espace sous le titre */
+}
+
+/* Texte avec effet d'apparition */
+.content-section span {
+    color:#ffffff;
+    font-size: 20px;
+    opacity: 0; /* Texte invisible au départ */
+    animation: fadeIn 2s ease-in-out forwards; /* Animation fluide */
+    margin: 46px 0; /* Ajoute un espacement uniforme entre les spans */
+}
+
+
+
+/* Ajout d'un léger délai pour des effets successifs */
+.content-section span:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.content-section span:nth-child(2) {
+    animation-delay: 0.9s;
+}
+
+.content-section span:nth-child(3) {
+    animation-delay: 1.8s;
+}
+
+/* Définition de l'animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(28px); /* Légère montée */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Position finale */
+    }
+}
+
+/*======================================================*/
+
+
+
+
+/*==============================  Page des 10 Souvenirs ====================*/
+
+
+
+.carousel-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #000; /* Fond noir */
+}
+
+/* Titre de la section carousel */
+.carousel-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ffffff; /* Titre en blanc */
+}
+
+/* --- Conteneur du carrousel et du texte --- */
+.carousel {
+    display: flex; /* Utilisation de Flexbox pour aligner les images et le texte côte à côte */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px; /* Espacement entre les images et le texte */
+    flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur une nouvelle ligne en petit écran */
+}
+
+.carousel-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* --- Carrousel d'images --- */
+.carousel-track {
+    display: flex; /* Flexbox pour les images empilées verticalement */
+    flex-direction: column;
+    gap: 15px;
+}
+
+.carousel-item {
+    display: block;
+    position: relative;
+    width: 100%; /* Les images prennent toute la largeur du parent */
+}
+
+.carousel img {
+    width: 100%; /* L'image occupe tout l'espace disponible dans le parent */
+    max-width: 600px; /* Taille maximale des images */
+    height: auto; /* Garde les proportions */
+    border-radius: 10px;
+    cursor: pointer; /* Montre que l'image est cliquable */
+}
+
+/* --- Section de texte à côté des images --- */
+.carousel-text {
+    max-width: 400px; /* Limite la largeur de la section de texte */
+    color: #fff; /* Texte en blanc */
+    font-size: 1rem;
+}
+
+.carousel-text h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.carousel-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* --- Curseur personnalisé --- */
+.carousel-item:hover img {
+    opacity: 0.9; /* Effet de survol sur l'image */
+}
+
+.carousel-item:hover {
+    cursor: url('cursor.png'), auto; /* Curseur personnalisé */
+}
+
+
+
+
+
+/*============ Effets avancé java ==================*/
+
+document.addEventListener("scroll", () => {
+    const videos = document.querySelectorAll(".video-section video");
+    videos.forEach((video) => {
+        const rect = video.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top <= windowHeight && rect.bottom >= 0) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+});
+
+
+/*===========  Effets transitions fluide  =============*/ 
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Évite les scrolls horizontaux */
+    scroll-behavior: smooth; /* Transition douce lors du scroll */
+}
+
+.video-section {
+    scroll-snap-align: start; /* Alignement fluide entre les sections */
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    scroll-snap-type: y mandatory; /* Force les sections à s'aligner verticalement */
+}
+
+
+
+
+
+/*============ Effet parallax ===================*/
+.video-section:hover video {
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #000;
+    color: #aaa;
+}
+
+
+/*================================  Federer analysis ================================*/
+
+
+
+
+
+/*===============================  Willimas vs Williams  =========================================*/
+
+.video-section {
+    background-color: black; /* Fond noir */
+    color: white; /* Texte blanc */
+    text-align: center;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column; /* Empiler les éléments verticalement */
+    align-items: center; /* Centrer les éléments horizontalement */
+    gap: 20px; /* Espacement entre chaque élément (h2, vidéo, p) */
+   
+}
+
+/* Texte au-dessus de la vidéo */
+.video-header h2 {
+    font-size: 24px;
+    margin: 0; /* Supprime les marges automatiques */
+}
+
+/* Conteneur vidéo avec ratio 2.4:1 */
+.video-container {
+    position: relative;
+    width: 960px; /* Largeur du rectangle */
+    height: 400px; /* Hauteur basée sur le ratio (960 ÷ 2.4 ≈ 400) */
+    overflow: hidden; /* Masquer ce qui dépasse */
+    border-radius: 15px; /* Coins légèrement arrondis */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Effet lumineux doux */
+}
+
+/* Vidéo ajustée */
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplir le rectangle sans déformer */ 
+    filter: brightness(130%); /* Réduit la luminosité */
+    
+}
+
+/* Texte en dessous de la vidéo */
+.video-description p {
+    color:#ffffff;
+    font-size: 18px;
+    margin: 0;
+    max-width: 960px; /* Largeur maximale alignée sur la vidéo */
+    line-height: 1.6; /* Améliore la lisibilité */
+}
+
+
+
+
+
+
+/*============================== Engagements Serena =========================== */
+
+.Fondation h2 { 
+
+    position: absolute; /* Permet un positionnement précis */
+    top: 10px;          /* Ajustez selon vos besoins */
+    left: 50%;          /* Centre horizontalement */
+
+}
+  
+button:hover {
+    background-color: #000000;
+  }
+
+
+/*Bouton lien */
+
+  .styled-link {
+    text-decoration: none;
+    position: relative;
+    padding: 5px 10px;
+    color: #ffc760; /* Bleu doux */
+    border: 2px solid transparent;
+    font-size: 18px;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .styled-link:hover {
+    border-color: #ffffff;
+    color: hsl(39, 100%, 71%);
+  }
+
+
+
+
+.video-section .overlay {
+    margin: 0;
+    position: relative; /* Nécessaire si tu veux ajuster avec des offsets */
+    top: 20px; /* Optionnel pour ajuster un peu en dessous du bord supérieur */
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+
+}
+
+/*===============Page avec les 25 images de fan ======================= */
+
+
+/* Section contenant le titre et la galerie */
+
+.photo-gallery-section {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Titre de la galerie */
+.gallery-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f4f4f4;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 1.5s ease-in-out; /* Effet d'apparition */
+}
+
+/* Galerie photo */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Colonnes adaptatives */
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Images dans la galerie */
+.photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    opacity: 0; /* Invisible au départ */
+    transform: translateY(20px); /* Légèrement décalé vers le bas */
+    animation: fadeIn 1s ease-out forwards; /* Effet d'apparition */
+}
+
+/*============== Effet d'apparition pour chaque image ==================*/
+.photo:nth-child(1) img { animation-delay: 0s; }
+.photo:nth-child(2) img { animation-delay: 0.1s; }
+.photo:nth-child(3) img { animation-delay: 0.2s; }
+.photo:nth-child(4) img { animation-delay: 0.3s; }
+.photo:nth-child(5) img { animation-delay: 0.4s; }
+.photo:nth-child(6) img { animation-delay: 0.5s; }
+.photo:nth-child(7) img { animation-delay: 0.6s; }
+.photo:nth-child(8) img { animation-delay: 0.7s; }
+.photo:nth-child(9) img { animation-delay: 0.8s; }
+.photo:nth-child(10) img { animation-delay: 0.9s; }
+.photo:nth-child(11) img { animation-delay: 1s; }
+.photo:nth-child(12) img { animation-delay: 1.1s; }
+.photo:nth-child(13) img { animation-delay: 1.2s; }
+.photo:nth-child(14) img { animation-delay: 1.3s; }
+.photo:nth-child(15) img { animation-delay: 1.4s; }
+
+/* Animation clé pour l'effet */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*============ Ouverture sur instagram ========*/
+
+
+.content-box {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #000000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .content-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .content-title {
+    font-size: 1.8rem;
+    margin: 20px 0;
+    color: #ffffff;
+    transition: color 0.3s;
+  }
+  
+  .content-image {
+    width: 50%; /* Réduit la largeur à 50% du conteneur */
+    height: auto; /* Maintient les proportions */
+    display: block;
+    margin: 0 auto; /* Centre horizontalement */
+    transition: transform 0.3s;
+  }
+  
+  /* Hover effects */
+  .content-link:hover .content-title {
+    color: #ffa600;
+  }
+  
+  .content-link:hover .content-image {
+    transform: scale(1.05);
+  }
+  /*===========================================*/
+
+
+
+
+
+  /*================== Evenements ======================*/
+
+  .agenda {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.event {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-bottom: 1px solid #000000;
+}
+
+.event:last-child {
+    border-bottom: none;
+}
+
+.event-date {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.event-details h2 {
+    font-size: 1.4em;
+    color: #fcdd2c;
+    margin: 5px 0;
+}
+
+.event-details p {
+    font-size: 1em;
+    color: #ec8703;
+}
+
+/*=============================================================*/
+
+
+/*===================== Evenements pasées =====================*/
+
+.souvenirs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsive */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.souvenir {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+}
+
+.souvenir img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.souvenir h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/*====================================================================*/
+
+/*============= Ajustement ===============*/
+
+
+.hamburger {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger:focus {
+    outline: none; /* Supprime le contour bleu au clic */
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+/* Masquer la checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Style du menu fermé */
+.menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 60px); /* Hauteur totale de l'écran sous l'en-tête */
+    background: rgba(43, 43, 43, 0.9);
+    padding: 1rem;
+    flex-direction: column;
+    overflow-y: auto; /* Permet le défilement si le contenu dépasse */
+}
+
+/* Afficher le menu lorsque la checkbox est cochée */
+.menu-toggle:checked + .hamburger + .menu {
+    display: flex;
+}
+
+/* Styles supplémentaires pour les liens */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 1rem 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.menu a:hover {
+    color: #ffffff;
+}
+
+/* Responsive pour les tablettes */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hamburger {
+        top: 10px;
+        left: 10px;
+        font-size: 18px;
+    }
+}
+
+
+
+/*===========================================*/
+
+/* ===================================== Responsive - Smartphones (max-width: 480px) ============== */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .hero p {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .video-section .video-text {
+        font-size: 1em;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .content-section {
+        font-size: 1.2em;
+        text-align: center;
+        padding: 1rem;
+    }
+    .menu a {
+        font-size: 0.9rem;
+    }
+    
+    .logo img {
+        max-width: 40px; 
+        margin: auto;
+    }
+    .hamburger {
+        top: 10px;
+        left: 10px;
+        font-size: 18px;
+    }
+    .photo-gallery {
+        gap: 10px;
+    }
+
+
+
+    /*============== 10 images souvenir ============*/
+   
+
+    .carousel-text {
+        max-width: 100%; /* Le texte occupe toute la largeur sur mobile */
+        margin-top: 20px; /* Ajout d'un espace au-dessus du texte */
+    }
+
+    .carousel {
+        flex-direction: column; /* Les images et le texte sont empilés verticalement */
+        align-items: center; /* Centre le contenu */
+    }
+
+    /*===================================================================*/    
+
+    /* ================  FEDAL  ===================== */
+    .video-container {
+        width: 320px;
+        height: 133px; /* 320 ÷ 2.4 */
+    }
+
+    .video-header h2 {
+        font-size: 20px;
+    }
+
+    .video-description p {
+        font-size: 16px;
+        width: 90%; /* Ajuste le texte à l'écran */
+    }
+    /*==============================================*/
+
+
+
+
+    /*===========Page qui ouvre la fenetre du site de la Fondation===========*/
+      .Fondation h2 {
+        top: 5px; /* Plus proche du haut pour les petits écrans */
+        font-size: 1.5rem; /* Texte plus petit */
+      }
+    
+      .button {
+        padding: 8px 16px; /* Moins d'espace pour les petits écrans */
+        font-size: 14px; /* Texte plus petit */
+      }
+
+      .styled-link {  /*Effet sur le bouton lien */
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    
+      .video-section .overlay {
+        font-size: 1.8rem; /* Ajuste la taille du texte pour les petits écrans */
+        top: 15px; /* Positionnement légèrement ajusté */
+      }
+      /*=========================================================================*/
+       
+
+      /* =========== Ouverture vers page insta ==========*/
+      .content-title {
+        font-size: 1.2rem;
+        margin: 10px 0;
+      }
+    
+      .content-box {
+        max-width: 100%;
+      }
+    
+      .content-image {
+        width: 70%; /* Image plus grande sur petits écrans */
+      }
+      /*===========================================*/
+
+
+    /*===================== Evenements ===========================*/
+
+
+    .agenda {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    .event-date {
+        font-size: 0.9em;
+    }
+
+    .event-details h2 {
+        font-size: 1em;
+    }
+
+    .event-details p {
+        font-size: 0.8em;
+    }
+    /*============================================================*/
+
+    /*=============== Evenements pasées ===========*/
+    .souvenirs {
+        grid-template-columns: 1fr; /* Une colonne sur mobile */
+    }
+
+    .souvenir h3 {
+        font-size: 0.9em; /* Réduction h3 == */
+    }
+
+    /*============================================================*/
+
+}
+
+
+
+
+
+
+
+
+
+
+/* ======== Tablettes (481px à 1024px) ======== */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3.3rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+    }
+    .menu a {
+        font-size: 1.1rem;
+    }
+    
+    .content-section {
+        font-size: 1.5rem;
+        padding: 2rem;
+    }
+    .video-section .video-text {
+        font-size: 1.5em;
+    }
+    .photo-gallery {
+        gap: 15px;
+    }
+    /* =================== 10 images souvenir ================== */
+    
+    .carousel img {
+        max-width: 300px; /* Taille intermédiaire pour les tablettes */
+    }
+
+    .carousel-text {
+        max-width: 80%; /* Limite la largeur du texte */
+    }
+    /*================================================================*/
+
+
+
+     /*=======  FEDAL ===========*/
+
+     .video-container {
+        width: 640px;
+        height: 267px; /* 640 ÷ 2.4 */
+    }
+
+    .video-header h2 {
+        font-size: 22px;
+    }
+
+    .video-description p {
+        font-size: 18px;
+    }
+
+
+    /*==============================*/
+
+
+
+    /*=========Page qui ouvre le site de la Fondation========*/
+    
+    .Fondation h2 {
+        top: 15px; /* Ajuste légèrement la position */
+        font-size: 1.8rem; /* Taille de texte intermédiaire */
+      }
+    
+      .button {
+        padding: 19px 32px; /* Ajustement intermédiaire */
+        font-size: 17px;
+      }
+    
+      .video-section .overlay {
+        font-size: 2rem; /* Taille de texte intermédiaire */
+        top: 18px; /* Positionnement ajusté */
+      }
+      /*====================================================*/
+    }
+    
+/* ======= RESPONSIVE : MENU VERTICAL ======= */
+@media screen and (max-width: 768px) {
+
+    .logo img {
+        max-width: 100px; 
+    }
+    /* Afficher le bouton hamburger sur petit écran */
+   
+
+    /* Cacher le menu par défaut sur mobile */
+    .menu {
+        display: none; /* Menu caché par défaut */
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        height: 100vh; /* Prendre toute la hauteur de l'écran */
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Lorsque le checkbox est coché, afficher le menu */
+    .menu-toggle:checked + .hamburger + .menu {
+        display: flex;
+    }
+
+    /* Style des liens du menu en mode mobile */
+    .menu ul {
+        display: block; /* Afficher les éléments de la liste verticalement */
+    }
+
+    .menu li a {
+        font-size: 20px; /* Agrandir les liens sur mobile */
+        color: white;
+    }
+
+    /*================== Ouverture insta ============*/
+    
+    .content-title {
+        font-size: 1.5rem;
+        margin: 15px 0;
+      }
+    
+      .content-box {
+        max-width: 600px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .content-image {
+        width: 60%; /* Image légèrement plus grande sur tablette */
+      }
+
+      /*================================================*/
+      /* ========== Evenements ===================*/
+      .agenda {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .event-date {
+        font-size: 1em;
+    }
+
+    .event-details h2 {
+        font-size: 1.2em;
+    }
+
+    .event-details p {
+        font-size: 0.9em;
+    }
+      /*===========================================*/
+
+      /*================== Evenements pasées =================*/
+      .souvenirs {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Plus petit sur tablette */
+    }
+
+    .souvenir h3 {
+        font-size: 1em; /* Réduire la taille du titre */
+    }
+
+
+
+      /*========================================================*/
+}
+
+
+
+
+
+
+/* ======== Desktop (min-width: 1025px) ======== */
+@media (min-width: 1025px) {
+    .hero h1 {
+        font-size: 6rem;
+    }
+    .hero p {
+        font-size: 1.5rem;
+    }
+    .menu a {
+        font-size: 1.2rem;
+    }
+    .logo img {
+        max-width: 140px; 
+    }
+    .content-section {
+        font-size: 2rem;
+    }
+    .video4-section {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .photo-gallery {
+        gap: 20px;
+    }
+
+     /*============= 10 images souvenir  =================*/
+
+     .carousel img {
+        max-width: 600px; /* Taille maximale des images sur grand écran */
+    }
+
+    .carousel-text {
+        max-width: 400px; /* Taille fixe du texte */
+    }
+     /*===================================================*/
+    
+
+     /* ======== FEDAL =======*/
+
+     .video-container {
+        width: 960px;
+        height: 400px; /* 960 ÷ 2.4 */
+    }
+
+    .video-header h2 {
+        font-size: 24px;
+    }
+
+    .video-description p {
+        font-size: 18px;
+    }
+
+    /*==========================*/
+
+
+
+
+
+
+
+    /*========= Page qui ouvre le site de la Fondation=======*/
+   
+    .Fondation h2 {
+        top: 10px; /* Distance standard */
+        font-size: 2rem; /* Taille standard */
+      }
+
+    /*J'ai aggrandie le bouton donc de java en pc */
+      button {
+        padding: 22px 32px; /* Plus d'espace pour les grands écrans */
+        font-size: 16px;
+      }
+      .styled-link {
+        font-size: 18px;
+        padding: 12px 20px;
+      }
+    
+      .video-section .overlay {
+        font-size: 2.5rem; /* Taille standard */
+        top: 20px; /* Positionnement standard */
+      }
+      /*=========================================================*/
+
+
+
+
+}
+
+
+
+
+
+
+ 
+
+
+/* ============================ Footer ===================================*/
+/* Footer principal */
+/* Conteneur principal du footer */
+.footer {
+    background-color: #000; /* Fond noir */
+    color: white; /* Texte blanc */
+    text-align: center;
+    padding: 20px 10px;
+    font-family: 'Playfair Display', serif; /* Police élégante */
+}
+
+/* Texte du footer */
+.footer-content p {
+    margin-bottom: 15px;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Conteneur des logos */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacement entre les logos */
+}
+
+/* Logos */
+.social-logo img {
+    
+    width: 50px; /* Largeur du logo */
+    height: auto; /* Garde les proportions */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.social-logo img:hover {
+    transform: scale(1.7); /* Zoom fort */
+    opacity: 0.8; /* Réduit légèrement l'opacité */
+}
+
+/* Formulaire de contact*/
+
+
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .contact-form h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  .contact-form label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+  }
+  
+  .contact-form .required {
+    color: #ff0000;
+    margin-left: 5px;
+  }
+  
+  .contact-form .optional {
+    color: #fac61b;
+    margin-left: 5px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ffb515;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .contact-form .example {
+    font-size: 0.9em;
+    color: #ffdc19;
+    margin: -5px 0 15px;
+    text-align: left;
+  }
+  
+  .contact-form textarea {
+    resize: none;
+  }
+  
+  .contact-form button {
+    background-color: #ffab0f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-form button:hover {
+    background-color: #ffbb00;
+  }
+
+
+  /*Lien vers d'autres sites fans */
+
+
+.footer-links {
+    margin-top: 20px;
+  }
+  
+  .footer-links h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin: 5px 0;
+  }
+  
+  .footer-links a {
+    color: #ffbb00;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #ffbb00;
+  }
+/*=======================================================================*/
+
